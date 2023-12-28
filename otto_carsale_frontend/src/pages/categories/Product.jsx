@@ -1,6 +1,15 @@
-import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from "swiper/react";
-import xx from "../../assets/images/caregories/cab.svg";
+import one from "../../assets/images/brands/1.png";
+import ten from "../../assets/images/brands/10.png";
+import two from "../../assets/images/brands/2.png";
+import three from "../../assets/images/brands/3.png";
+import four from "../../assets/images/brands/4.png";
+import five from "../../assets/images/brands/5.png";
+import six from "../../assets/images/brands/6.png";
+import seven from "../../assets/images/brands/7.png";
+import eight from "../../assets/images/brands/8.png";
+import nine from "../../assets/images/brands/9.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -10,49 +19,54 @@ import "./style.css";
 
 const Product = ({ title }) => {
   return (
-    <section
-      className="w-full mt-6 p-5 px-5 border rounded-xl drop-shadow-category-shadow"
+    <div
+      className="w-72 md:w-96 mt-6 p-5 px-5 border rounded-xl drop-shadow-category-shadow"
     >
       <h1 className=" text-lg font-bold mt-2 ml-2 mb-3">{title}</h1>
-  <div className='j justify-center items-center flex px-5 object-center'>
-      <Swiper
-        effect={'coverflow'}
-        grabCursor={true}
+  <div className='justify-center items-center flex px-5 object-center'>
+  <Swiper
+        spaceBetween={30}
         centeredSlides={true}
-        slidesPerView={'auto'}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
-        pagination={false}
-        modules={[EffectCoverflow, Autoplay, Pagination]}
+        modules={[Autoplay]}
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src={xx} className='h-56' alt='ss' />
+          <img src={one} className='h-40 px-16' alt='ss' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={xx} className='h-56' alt='ss' />
+          <img src={two} className='h-40 px-16' alt='ss' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={xx} className='h-56' alt='ss' />
+          <img src={three} className='h-40 ' alt='ss' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={xx} className='h-56' alt='ss' />
+          <img src={four} className='h-40 ' alt='ss' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={xx} className='h-56' alt='ss' />
+          <img src={five} className='h-40 ' alt='ss' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={six} className='h-40 ' alt='ss' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={seven} className='h-40 px-16' alt='ss' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={eight} className='h-40 px-16' alt='ss' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={nine} className='h-40 px-16' alt='ss' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={ten} className='h-40 ' alt='ss' />
         </SwiperSlide>
       </Swiper>
   </div>
-    </section>
+    </div>
   );
 };
 

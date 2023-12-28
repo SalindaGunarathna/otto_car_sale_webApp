@@ -1,4 +1,5 @@
 import {
+  Button,
   Card,
   CardBody,
   Option,
@@ -62,7 +63,7 @@ const Categorypage = () => {
               unmount: { scale: 0, y: -25 },
             }}
           >
-            <a href="#">
+            <a href="/category/cars">
               <div>
                 <Card className="mt-2 w-auto">
                   <img className="px-3 -mt-2" src={car} alt="car" />
@@ -88,7 +89,7 @@ const Categorypage = () => {
               unmount: { scale: 0, y: -25 },
             }}
           >
-            <a href="#">
+            <a href="/category/cabs">
               <div>
                 <Card className="mt-2 w-auto">
                   <img className="px-3 -mt-2" src={cab} alt="cab" />
@@ -114,7 +115,7 @@ const Categorypage = () => {
               unmount: { scale: 0, y: -25 },
             }}
           >
-            <a href="#">
+            <a href="/category/trucks">
               <div>
                 <Card className="mt-2 w-auto">
                   <img className="px-3 -mt-2" src={truck} alt="truck" />
@@ -140,7 +141,7 @@ const Categorypage = () => {
               unmount: { scale: 0, y: -25 },
             }}
           >
-            <a href="#">
+            <a href="/category/motorcycles">
               <div>
                 <Card className="mt-2 w-auto">
                   <img className="px-3 -mt-2" src={bike} alt="bike" />
@@ -166,7 +167,7 @@ const Categorypage = () => {
               unmount: { scale: 0, y: -25 },
             }}
           >
-            <a href="#">
+            <a href="/category/vans">
               <div>
                 <Card className="mt-2 w-auto">
                   <img className="px-3 -mt-2" src={van} alt="van" />
@@ -190,38 +191,44 @@ const Categorypage = () => {
         <Typography variant="h5" className="mb-2">
           Search your vehicle
         </Typography>
-        <div className="grid  grid-cols-2 sm:grid-cols-3 justify-center">
-          <div className="w-56 p-2">
+        <div className="grid grid-cols-1 sm:grid-cols-3">
+          <div className="md:w-40 lg:w-56 p-2 flex justify-center items-center">
             <Select color="blue" label="Select Version">
               <Option>add1</Option>
               <Option>add2</Option>
               <Option>add3</Option>
             </Select>
           </div>
-          <div className="w-56 p-2">
+          <div className="md:w-40 lg:w-56 p-2 flex justify-center items-center">
             <Select color="blue" label="Select Version">
               <Option>add</Option>
             </Select>
           </div>
-          <div className="w-56 p-2">
+          <div className="md:w-40 lg:w-56 p-2 flex justify-center items-center">
             <Select color="blue" label="Select Version">
               <Option>addL</Option>
             </Select>
           </div>
-          <div className="w-56 p-2">
+          <div className="md:w-40 lg:w-56 p-2 flex justify-center items-center">
             <Select color="blue" label="Select Version">
               <Option>add</Option>
             </Select>
           </div>
-          <div className="w-56 p-2">
+          <div className="p-2 md:w-40 lg:w-56 flex justify-center items-center">
             <Select color="blue" label="Select Version">
               <Option>add</Option>
             </Select>
+          </div>
+          <div className="flex justify-center items-center">
+            <Button size="sm" color="blue">
+              Search
+            </Button>
           </div>
         </div>
       </div>
-
-      <Product title="Our Brands" />
+      <div className="flex justify-center">
+        <Product title="Our Brands" />
+      </div>
     </MainContainer>
   );
 };
