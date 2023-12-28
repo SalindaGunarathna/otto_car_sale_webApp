@@ -5,7 +5,7 @@ import { Header } from '../components/header/Header'
 
 const MainLayout = () => {
   return (
-    <div className= "w-screen h-screen overflow-y-auto">
+    <div className= "w-screen h-screen overflow-x-hidden overflow-y-visible">
         <Header/>
         <Outlet/>
         <Footer/>

@@ -8,8 +8,8 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-import rent from "../../assets/images/rent.svg"
-import sale from "../../assets/images/sale.svg"
+import rent from "../../assets/images/rent.svg";
+import sale from "../../assets/images/sale.svg";
 
 const Home = () => {
   return (
@@ -25,12 +25,9 @@ const Home = () => {
               />
             </CardHeader>
             <CardBody>
-              <div className="mb-2 flex items-center justify-between">
+              <div className="mb-2 flex items-center justify-center">
                 <Typography color="blue-gray" className="font-medium">
-                  Apple AirPods
-                </Typography>
-                <Typography color="blue-gray" className="font-medium">
-                  $95.00
+                  Need a car!
                 </Typography>
               </div>
               <Typography
@@ -38,8 +35,8 @@ const Home = () => {
                 color="gray"
                 className="font-normal opacity-75"
               >
-                With plenty of talk and listen time, voice-activated Siri
-                access, and an available wireless charging case.
+                We have a wide selection of vehicles available for sale. Find
+                your dream car today!
               </Typography>
             </CardBody>
             <CardFooter className="pt-0">
@@ -63,12 +60,9 @@ const Home = () => {
               />
             </CardHeader>
             <CardBody>
-              <div className="mb-2 flex items-center justify-between">
+              <div className="mb-2 flex items-center justify-center">
                 <Typography color="blue-gray" className="font-medium">
-                  Apple AirPods
-                </Typography>
-                <Typography color="blue-gray" className="font-medium">
-                  $95.00
+                  Rent a vehicle
                 </Typography>
               </div>
               <Typography
@@ -76,8 +70,14 @@ const Home = () => {
                 color="gray"
                 className="font-normal opacity-75"
               >
-                With plenty of talk and listen time, voice-activated Siri
-                access, and an available wireless charging case.
+                <Typography
+                  variant="small"
+                  color="gray"
+                  className="font-normal opacity-75"
+                >
+                  Are you looking to rent a car? So, welcome. Rent a car for
+                  your next adventure!
+                </Typography>
               </Typography>
             </CardBody>
             <CardFooter className="pt-0">
