@@ -16,7 +16,7 @@ const VansPage = () => {
           <figcaption className="absolute top-5">
             <div className="mx-16">
               <Typography variant="h2" color="gray">
-                CARS
+                VANS
               </Typography>
             </div>
           </figcaption>
