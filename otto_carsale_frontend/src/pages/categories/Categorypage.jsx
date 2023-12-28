@@ -3,6 +3,7 @@ import {
   CardBody,
   Option,
   Select,
+  Tooltip,
   Typography,
 } from "@material-tailwind/react";
 import React from "react";
@@ -53,90 +54,135 @@ const Categorypage = () => {
           Vehicle Categories
         </Typography>
         <div className="grid p-5 gap-10 justify-between grid-cols-2 sm:grid-cols-5 grid-rows[auto]">
-          <a href="#">
-            <div>
-              <Card className="mt-2 w-auto">
-                <img className="px-3 -mt-2" src={car} alt="car" />
-                <CardBody className="pt-0 justify-center items-center flex -mt-3">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="mb-0"
-                  >
-                    Cars
-                  </Typography>
-                </CardBody>
-              </Card>
-            </div>
-          </a>
+          <Tooltip
+            content="See more"
+            placement="bottom"
+            animate={{
+              mount: { scale: 1, y: 0 },
+              unmount: { scale: 0, y: -25 },
+            }}
+          >
+            <a href="#">
+              <div>
+                <Card className="mt-2 w-auto">
+                  <img className="px-3 -mt-2" src={car} alt="car" />
+                  <CardBody className="pt-0 justify-center items-center flex -mt-3">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="mb-0"
+                    >
+                      Cars
+                    </Typography>
+                  </CardBody>
+                </Card>
+              </div>
+            </a>
+          </Tooltip>
 
-          <a href="#">
-            <div>
-              <Card className="mt-2 w-auto">
-                <img className="px-3 -mt-2" src={cab} alt="cab" />
-                <CardBody className="pt-0 justify-center items-center flex -mt-3">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="mb-0"
-                  >
-                    Cabs
-                  </Typography>
-                </CardBody>
-              </Card>
-            </div>
-          </a>
+          <Tooltip
+            content="See more"
+            placement="bottom"
+            animate={{
+              mount: { scale: 1, y: 0 },
+              unmount: { scale: 0, y: -25 },
+            }}
+          >
+            <a href="#">
+              <div>
+                <Card className="mt-2 w-auto">
+                  <img className="px-3 -mt-2" src={cab} alt="cab" />
+                  <CardBody className="pt-0 justify-center items-center flex -mt-3">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="mb-0"
+                    >
+                      Cabs
+                    </Typography>
+                  </CardBody>
+                </Card>
+              </div>
+            </a>
+          </Tooltip>
 
-          <a href="#">
-            <div>
-              <Card className="mt-2 w-auto">
-                <img className="px-3 -mt-2" src={truck} alt="truck" />
-                <CardBody className="pt-0 justify-center items-center flex -mt-3">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="mb-0"
-                  >
-                    Trucks
-                  </Typography>
-                </CardBody>
-              </Card>
-            </div>
-          </a>
+          <Tooltip
+            content="See more"
+            placement="bottom"
+            animate={{
+              mount: { scale: 1, y: 0 },
+              unmount: { scale: 0, y: -25 },
+            }}
+          >
+            <a href="#">
+              <div>
+                <Card className="mt-2 w-auto">
+                  <img className="px-3 -mt-2" src={truck} alt="truck" />
+                  <CardBody className="pt-0 justify-center items-center flex -mt-3">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="mb-0"
+                    >
+                      Trucks
+                    </Typography>
+                  </CardBody>
+                </Card>
+              </div>
+            </a>
+          </Tooltip>
 
-          <a href="#">
-            <div>
-              <Card className="mt-2 w-auto">
-                <img className="px-3 -mt-2" src={bike} alt="bike" />
-                <CardBody className="pt-0 justify-center items-center flex -mt-3">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="mb-0"
-                  >
-                    Motorcycles
-                  </Typography>
-                </CardBody>
-              </Card>
-            </div>
-          </a>
+          <Tooltip
+            content="See more"
+            placement="bottom"
+            animate={{
+              mount: { scale: 1, y: 0 },
+              unmount: { scale: 0, y: -25 },
+            }}
+          >
+            <a href="#">
+              <div>
+                <Card className="mt-2 w-auto">
+                  <img className="px-3 -mt-2" src={bike} alt="bike" />
+                  <CardBody className="pt-0 justify-center items-center flex -mt-3">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="mb-0"
+                    >
+                      Motorcycles
+                    </Typography>
+                  </CardBody>
+                </Card>
+              </div>
+            </a>
+          </Tooltip>
 
-          <a href="#">
-            <div>
-              <Card className="mt-2 w-auto">
-                <img className="px-3 -mt-2" src={van} alt="van" />
-                <CardBody className="pt-0 justify-center items-center flex -mt-3">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="mb-0"
-                  >
-                    Vans
-                  </Typography>
-                </CardBody>
-              </Card>
-            </div>
-          </a>
+          <Tooltip
+            content="See more"
+            placement="bottom"
+            animate={{
+              mount: { scale: 1, y: 0 },
+              unmount: { scale: 0, y: -25 },
+            }}
+          >
+            <a href="#">
+              <div>
+                <Card className="mt-2 w-auto">
+                  <img className="px-3 -mt-2" src={van} alt="van" />
+                  <CardBody className="pt-0 justify-center items-center flex -mt-3">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="mb-0"
+                    >
+                      Vans
+                    </Typography>
+                  </CardBody>
+                </Card>
+              </div>
+            </a>
+          </Tooltip>
         </div>
       </div>
 
@@ -147,7 +193,9 @@ const Categorypage = () => {
         <div className="grid  grid-cols-2 sm:grid-cols-3 justify-center">
           <div className="w-56 p-2">
             <Select color="blue" label="Select Version">
-              <Option>add</Option>
+              <Option>add1</Option>
+              <Option>add2</Option>
+              <Option>add3</Option>
             </Select>
           </div>
           <div className="w-56 p-2">
@@ -174,7 +222,6 @@ const Categorypage = () => {
       </div>
 
       <Product title="Our Brands" />
-
     </MainContainer>
   );
 };

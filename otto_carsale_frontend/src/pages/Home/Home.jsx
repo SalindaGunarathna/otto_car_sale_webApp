@@ -14,7 +14,7 @@ import sale from "../../assets/images/sale.svg";
 const Home = () => {
   return (
     <MainContainer>
-      <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-[auto] gap-5 pl-20 pr-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-[auto] gap-5 pl-20 pr-20 pb-10">
         <div className=" justify-center flex">
           <Card className="w-96">
             <CardHeader shadow={false} floated={false} className="h-96">
