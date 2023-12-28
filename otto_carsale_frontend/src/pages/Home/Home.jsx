@@ -40,13 +40,15 @@ const Home = () => {
               </Typography>
             </CardBody>
             <CardFooter className="pt-0">
-              <Button
-                ripple={false}
-                fullWidth={true}
-                className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-              >
-                View sale
-              </Button>
+              <a href="/category">
+                <Button
+                  ripple={false}
+                  fullWidth={true}
+                  className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+                >
+                  View sale
+                </Button>
+              </a>
             </CardFooter>
           </Card>
         </div>
