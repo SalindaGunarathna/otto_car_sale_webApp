@@ -29,6 +29,10 @@ const TrucksPage = () => {
           </figcaption>
         </figure>
       </div>
+
+<div className="p-5 px-5 border rounded-xl drop-shadow-category-shadow mb-10">
+
+</div>
     </MainContainer>
   )
 }

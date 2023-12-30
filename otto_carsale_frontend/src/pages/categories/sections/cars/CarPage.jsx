@@ -1,12 +1,13 @@
-import React from 'react'
-import MainContainer from '../../../../Layout/MainContainer'
-import { Typography } from '@material-tailwind/react'
-import carbg from '../../../../assets/images/PageHeaders/car.svg'
+import React from "react";
+import MainContainer from "../../../../Layout/MainContainer";
+import { Typography } from "@material-tailwind/react";
+import carbg from "../../../../assets/images/PageHeaders/car.svg";
+import CarSmallCard from "../../../../components/cards/CarSmallCard";
 
 const CarPage = () => {
   return (
     <MainContainer>
-        <div className="mb-10">
+      <div className="mb-10">
         <figure className="relative h-96 w-full">
           <img
             className="h-full w-full rounded-xl object-cover object-center"
@@ -29,8 +30,18 @@ const CarPage = () => {
           </figcaption>
         </figure>
       </div>
-    </MainContainer>
-  )
-}
 
-export default CarPage
+      <div className="p-5 px-5 border rounded-xl drop-shadow-category-shadow mb-10">
+        <div className="grid p-5 gap-10 justify-between grid-cols-2 sm:grid-cols-4 grid-rows[auto]">
+          <CarSmallCard name="Toyota" imgUrl="https://wallpaperaccess.com/full/267434.jpg" />
+          <CarSmallCard name="Toyota" imgUrl="https://wallpaperaccess.com/full/267434.jpg" />
+          <CarSmallCard name="Toyota" imgUrl="https://wallpaperaccess.com/full/267434.jpg" />
+          <CarSmallCard name="Toyota" imgUrl="https://wallpaperaccess.com/full/267434.jpg" />
+          <CarSmallCard name="Toyota" imgUrl="https://wallpaperaccess.com/full/267434.jpg" />
+        </div>
+      </div>
+    </MainContainer>
+  );
+};
+
+export default CarPage;
