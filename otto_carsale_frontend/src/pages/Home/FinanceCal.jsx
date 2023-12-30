@@ -64,7 +64,7 @@ const FinanceCal = () => {
       <Typography
         className="flex justify-center items-center my-3"
         variant="h3"
-        color="blue-gray"
+        color="green"
       >
         Finance Calculator
       </Typography>
@@ -75,8 +75,8 @@ const FinanceCal = () => {
         Planning to buy your dream vehicle from us? Use our finance calculator
         to find out how much you can borrow and what your payments might be.
       </Typography>
-      <Typography color="red">
-        <span className="font-bold"> {err} </span>
+      <Typography className="flex justify-center items-center" color="red">
+        <span className="font-bold pt-1"> {err} </span>
       </Typography>
       <div>
         <form onSubmit={registerHandle}>

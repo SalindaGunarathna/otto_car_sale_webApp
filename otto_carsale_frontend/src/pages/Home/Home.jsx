@@ -1,16 +1,16 @@
-import React from "react";
-import MainContainer from "../../Layout/MainContainer";
 import {
+  Button,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
+  CardHeader,
   Typography,
-  Button,
 } from "@material-tailwind/react";
+import React from "react";
+import MainContainer from "../../Layout/MainContainer";
+import carkey from "../../assets/images/car_key.svg";
 import rent from "../../assets/images/rent.svg";
 import sale from "../../assets/images/sale.svg";
-import carkey from "../../assets/images/car_key.svg";
 import FinanceCal from "./FinanceCal";
 
 const Home = () => {

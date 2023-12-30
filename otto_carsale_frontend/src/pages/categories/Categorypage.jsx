@@ -29,7 +29,7 @@ const Categorypage = () => {
           />
           <figcaption className="absolute top-5">
             <div className="mx-16">
-              <Typography variant="h2" color="gray">
+              <Typography variant="h2" color="white">
                 OTTO CAR SALE
               </Typography>
             </div>
