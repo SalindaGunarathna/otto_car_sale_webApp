@@ -191,30 +191,30 @@ const Categorypage = () => {
         <Typography variant="h5" className="mb-2">
           Search your vehicle
         </Typography>
-        <div className="grid grid-cols-1 sm:grid-cols-3">
-          <div className="md:w-40 lg:w-56 p-2 flex justify-center items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:px-36 mt-2 justify-around items-center">
+          <div className="w-full px-5 p-2">
             <Select color="blue" label="Select Version">
               <Option>add1</Option>
               <Option>add2</Option>
               <Option>add3</Option>
             </Select>
           </div>
-          <div className="md:w-40 lg:w-56 p-2 flex justify-center items-center">
+          <div className="w-full px-5 p-2">
             <Select color="blue" label="Select Version">
               <Option>add</Option>
             </Select>
           </div>
-          <div className="md:w-40 lg:w-56 p-2 flex justify-center items-center">
+          <div className="w-full px-5 p-2">
             <Select color="blue" label="Select Version">
               <Option>addL</Option>
             </Select>
           </div>
-          <div className="md:w-40 lg:w-56 p-2 flex justify-center items-center">
+          <div className="w-full px-5 p-2">
             <Select color="blue" label="Select Version">
               <Option>add</Option>
             </Select>
           </div>
-          <div className="p-2 md:w-40 lg:w-56 flex justify-center items-center">
+          <div className="w-full px-5 p-2">
             <Select color="blue" label="Select Version">
               <Option>add</Option>
             </Select>
