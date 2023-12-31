@@ -54,7 +54,7 @@ const Categorypage = () => {
         <Typography variant="h5" className="-mb-1">
           Vehicle Categories
         </Typography>
-        <div className="grid p-5 gap-10 justify-between grid-cols-2 sm:grid-cols-5 grid-rows[auto]">
+        <div className="grid p-5 gap-10 justify-between grid-cols-2 md:grid-cols-5 grid-rows[auto]">
           <Tooltip
             content="See more"
             placement="bottom"

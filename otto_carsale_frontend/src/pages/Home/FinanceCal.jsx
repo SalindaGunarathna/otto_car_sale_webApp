@@ -18,6 +18,7 @@ const FinanceCal = () => {
   const [err, setErr] = React.useState("");
 
   const registerHandle = (e) => {
+    err && setErr("");
     e.preventDefault();
 
     const amount = e.target[0].value;
@@ -26,22 +27,16 @@ const FinanceCal = () => {
     const loanTerms = e.target[3].value;
 
     if (
-      amount === "" ||
-      downPayment === "" ||
-      interestRate === "" ||
-      loanTerms === ""
+      !amount || !downPayment || !interestRate || !loanTerms
     ) {
       handleOpen();
       return;
     } else {
-      if (downPayment > amount) {
+      if (parseFloat(downPayment) > parseFloat(amount)) {
         setErr("Down Payment cannot be greater than the amount");
         return;
       } else if (interestRate > 100) {
         setErr("Interest Rate cannot be greater than 100");
-        return;
-      } else if (downPayment >= amount) {
-        setErr("The car can be paid in full.");
         return;
       } else {
         const monthlyAmount =
@@ -103,7 +98,14 @@ const FinanceCal = () => {
       </div>
       <div className="flex justify-center items-center mt-4">
         <div className="flex justify-center items-center border rounded-xl border-light-green-500 w--full px-5 py-2">
-          Monthly Payment : {mamount}
+          {err === "" ? (
+            <div>Monthly Payment : {mamount}</div>
+          ) : (
+            <div>Monthly Payment : <span style={{ color: "red" }}>
+            Try again
+          </span>
+          </div>
+          )}
         </div>
       </div>
       <div>

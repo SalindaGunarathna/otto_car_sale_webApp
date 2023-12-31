@@ -11,12 +11,14 @@ import {
 import wtsapp from "../../assets/whatsapp-whats-app-svgrepo-com.svg";
 import call from "../../assets/telephone-svgrepo-com.svg";
 import mzg from "../../assets/mail-svgrepo-com.svg";
+import { Link } from "react-router-dom";
 
-const CarSmallCard = ({ name, imgUrl }) => {
+const CarSmallCard = ({ section, name, imgUrl, id }) => {
+
   return (
     <Card className="w-full max-w-[26rem] shadow-lg">
       <CardHeader floated={false} className="border border-amber-100">
-        <img src={imgUrl} alt={name} />
+        <img src={imgUrl} alt={name + id} />
       </CardHeader>
       <CardBody>
         <div className="flex items-center justify-between -mt-2">
@@ -65,7 +67,9 @@ const CarSmallCard = ({ name, imgUrl }) => {
       </CardBody>
       <CardFooter className="pt-0">
         <div className="flex justify-center items-center">
+          <Link to={`/category/${section}/${id}`}>
           <Button size="md">More Details</Button>
+          </Link>
         </div>
       </CardFooter>
     </Card>

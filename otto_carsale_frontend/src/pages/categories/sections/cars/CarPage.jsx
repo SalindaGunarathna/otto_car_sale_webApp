@@ -1,8 +1,32 @@
 import React from "react";
+import '../break.css'
 import MainContainer from "../../../../Layout/MainContainer";
 import { Typography } from "@material-tailwind/react";
 import carbg from "../../../../assets/images/PageHeaders/car.svg";
 import CarSmallCard from "../../../../components/cards/CarSmallCard";
+
+const cars = [
+  {
+    name: "Toyota",
+    imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
+  },
+  {
+    name: "Nissan",
+    imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
+  },
+  {
+    name: "Corolla",
+    imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
+  },
+  {
+    name: "Ford",
+    imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
+  },
+  {
+    name: "Tacoma",
+    imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
+  },
+];
 
 const CarPage = () => {
   return (
@@ -32,12 +56,16 @@ const CarPage = () => {
       </div>
 
       <div className="p-5 px-5 border rounded-xl drop-shadow-category-shadow mb-10">
-        <div className="grid p-5 gap-10 justify-between grid-cols-2 sm:grid-cols-4 grid-rows[auto]">
-          <CarSmallCard name="Toyota" imgUrl="https://wallpaperaccess.com/full/267434.jpg" />
-          <CarSmallCard name="Toyota" imgUrl="https://wallpaperaccess.com/full/267434.jpg" />
-          <CarSmallCard name="Toyota" imgUrl="https://wallpaperaccess.com/full/267434.jpg" />
-          <CarSmallCard name="Toyota" imgUrl="https://wallpaperaccess.com/full/267434.jpg" />
-          <CarSmallCard name="Toyota" imgUrl="https://wallpaperaccess.com/full/267434.jpg" />
+      <div className="grid p-5 gap-10 justify-between custom-grid-cols-4 grid-rows-auto">
+          {cars.map(({ name, imgUrl }, index) => (
+            <CarSmallCard
+              key={index}
+              name={name}
+              imgUrl={imgUrl}
+              id={index}
+              section="cars"
+            />
+          ))}
         </div>
       </div>
     </MainContainer>
