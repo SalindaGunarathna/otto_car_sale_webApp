@@ -12,6 +12,7 @@ import wtsapp from "../../assets/whatsapp-whats-app-svgrepo-com.svg";
 import call from "../../assets/telephone-svgrepo-com.svg";
 import mzg from "../../assets/mail-svgrepo-com.svg";
 import { Link } from "react-router-dom";
+import VehicleFull from "./VehicleFull";
 
 const CarSmallCard = ({ section, name, imgUrl, id }) => {
 
@@ -68,7 +69,9 @@ const CarSmallCard = ({ section, name, imgUrl, id }) => {
       <CardFooter className="pt-0">
         <div className="flex justify-center items-center">
           <Link to={`/category/${section}/${id}`}>
-          <Button size="md">More Details</Button>
+          <Button onClick={()=>{
+            <VehicleFull key={id} CarName={name} imgVhl={imgUrl}/>
+          }} size="md">More Details</Button>
           </Link>
         </div>
       </CardFooter>

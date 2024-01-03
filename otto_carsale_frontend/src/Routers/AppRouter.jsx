@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
+import VehicleFull from "../components/cards/VehicleFull";
 import Home from "../pages/Home/Home";
 import Categorypage from "../pages/categories/Categorypage";
 import BikePage from "../pages/categories/sections/bikes/BikePage";
@@ -15,12 +16,17 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="category/cars" element={<CarPage />} />
           <Route path="category" element={<Categorypage />} />
+          <Route path="category/cars" element={<CarPage />}/>
+          <Route path="category/cars/:id" element={<CarPage />}/>
           <Route path="category/vans" element={<VansPage />} />
+          <Route path="category/vans/:id" element={<VehicleFull />} />
           <Route path="category/cabs" element={<CabsPage />} />
+          <Route path="category/cabs/:id" element={<VehicleFull />} />
           <Route path="category/trucks" element={<TrucksPage />} />
+          {/* <Route path="category/trucks/:id" element={<VehicleFull />} /> */}
           <Route path="category/motorcycles" element={<BikePage />} />
+          <Route path="category/motorcycles/:id" element={<VehicleFull />} />
         </Route>
       </Routes>
     </BrowserRouter>
