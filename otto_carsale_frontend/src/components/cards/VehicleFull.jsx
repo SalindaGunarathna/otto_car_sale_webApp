@@ -17,6 +17,14 @@ const VehicleFull = () => {
       job: "Manager",
     },
     {
+      name: "John Michael",
+      job: "Manager",
+    },
+    {
+      name: "John Michael",
+      job: "Manager",
+    },
+    {
       name: "Alexa Liras",
       job: "Developer",
     },
