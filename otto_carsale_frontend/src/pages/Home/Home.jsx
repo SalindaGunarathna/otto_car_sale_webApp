@@ -11,12 +11,25 @@ import MainContainer from "../../Layout/MainContainer";
 import carkey from "../../assets/images/car_key.svg";
 import rent from "../../assets/images/rent.svg";
 import sale from "../../assets/images/sale.svg";
+import rent2 from "../../assets/images/home/rent.svg";
+import sale2 from "../../assets/images/home/sale.svg";
 import FinanceCal from "./FinanceCal";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "./styles.css";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const Home = () => {
   return (
     <MainContainer>
-      <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-[auto] gap-5 pl-20 pr-20 pb-10 sm:px-0">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-[auto] gap-5 pl-20 pr-20 pb-10 sm:px-0">
         <div className=" justify-center flex">
           <Card className="w-96">
             <CardHeader shadow={false} floated={false} className="h-96">
@@ -95,6 +108,70 @@ const Home = () => {
             </CardFooter>
           </Card>
         </div>
+      </div> */}
+
+      <div className="mb-10">
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={false}
+          modules={[Autoplay, Pagination, Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <figure className="relative h-96 w-full">
+              <img
+                className="h-full w-full rounded-xl object-cover object-center"
+                src={sale2}
+                alt="background img"
+              />
+              <figcaption className="absolute bottom-8 left-2/4 flex w-[calc(100%-4rem)] -translate-x-2/4 rounded-xl border border-white bg-white/75 py-4 justify-center items-center shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm">
+                <div>
+                  <Typography variant="h5" color="blue-gray">
+                    Drive into Convenience
+                  </Typography>
+                  <Typography color="gray" className="mt-2 mb-2 font-normal">
+                    Your Ultimate Online Destination for Selling Vehicles
+                  </Typography>
+                  <Button>
+                    <a href="/category">Buy Dream Vehicle</a>
+                  </Button>
+                </div>
+              </figcaption>
+            </figure>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <figure className="relative h-96 w-full">
+              <img
+                className="h-full w-full rounded-xl object-cover object-center"
+                src={rent2}
+                alt="background img"
+              />
+              <figcaption className="absolute bottom-8 left-2/4 flex w-[calc(100%-4rem)] -translate-x-2/4 rounded-xl border border-white bg-white/75 py-4 justify-center items-center shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm">
+                <div>
+                  <Typography variant="h5" color="blue-gray">
+                    Ride with Ease: Your Hassle-Free Solution for Vehicle
+                    Rentals
+                  </Typography>
+                  <Typography color="gray" className="mt-2 mb-2 font-normal">
+                    Your Ultimate Online Destination for Selling Vehicles
+                  </Typography>
+                  <Button>
+                    <a href="#">rent vehicle</a>
+                  </Button>
+                </div>
+              </figcaption>
+            </figure>
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       <div className="mb-10">
@@ -129,7 +206,6 @@ const Home = () => {
       </div>
 
       <FinanceCal />
-      
     </MainContainer>
   );
 };
