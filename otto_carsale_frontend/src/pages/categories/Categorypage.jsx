@@ -1,9 +1,6 @@
 import {
-  Button,
   Card,
   CardBody,
-  Option,
-  Select,
   Tooltip,
   Typography,
 } from "@material-tailwind/react";
