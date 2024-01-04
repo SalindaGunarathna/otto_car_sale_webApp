@@ -32,7 +32,7 @@ const trucks = [
       "https://as2.ftcdn.net/v2/jpg/01/01/90/25/1000_F_101902599_2a3XCqOUB2M6IHXwciyTUFpBBpJnCM25.jpg"
   },
   {
-    name: "Toyota",
+    name: "Toyotttttta",
     imgUrl:
       "https://as2.ftcdn.net/v2/jpg/01/01/90/25/1000_F_101902599_2a3XCqOUB2M6IHXwciyTUFpBBpJnCM25.jpg"
   }

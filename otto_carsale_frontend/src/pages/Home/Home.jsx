@@ -1,16 +1,16 @@
 import {
   Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
+  // Card,
+  // CardBody,
+  // CardFooter,
+  // CardHeader,
   Typography,
 } from "@material-tailwind/react";
 import React from "react";
 import MainContainer from "../../Layout/MainContainer";
 import carkey from "../../assets/images/car_key.svg";
-import rent from "../../assets/images/rent.svg";
-import sale from "../../assets/images/sale.svg";
+// import rent from "../../assets/images/rent.svg";
+// import sale from "../../assets/images/sale.svg";
 import rent2 from "../../assets/images/home/rent.svg";
 import sale2 from "../../assets/images/home/sale.svg";
 import FinanceCal from "./FinanceCal";
@@ -25,6 +25,7 @@ import "./styles.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Search from "../Search";
 
 const Home = () => {
   return (
@@ -115,7 +116,7 @@ const Home = () => {
           spaceBetween={30}
           centeredSlides={true}
           autoplay={{
-            delay: 2500,
+            delay: 3000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -125,23 +126,25 @@ const Home = () => {
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide>
+          <SwiperSlide >
             <figure className="relative h-96 w-full">
               <img
-                className="h-full w-full rounded-xl object-cover object-center"
+                className="h-full w-full rounded-lg object-cover object-center"
                 src={sale2}
                 alt="background img"
               />
-              <figcaption className="absolute bottom-8 left-2/4 flex w-[calc(100%-4rem)] -translate-x-2/4 rounded-xl border border-white bg-white/75 py-4 justify-center items-center shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm">
+              <figcaption className="absolute top-8 left-2/4 flex w-1/2 -translate-x-2/4 rounded-xl  py-4 justify-center items-center shadow-lg saturate-200">
+                <Typography variant="h2" color="white">
+                  BUY YOUR DREAM VEHICLE
+                </Typography>
+              </figcaption>
+              <figcaption className="absolute bottom-8 left-2/4 flex w-1/2 -translate-x-2/4 rounded-xl border py-4 justify-center items-center shadow-lg saturate-200 backdrop-blur-sm">
                 <div>
-                  <Typography variant="h5" color="blue-gray">
-                    Drive into Convenience
-                  </Typography>
-                  <Typography color="gray" className="mt-2 mb-2 font-normal">
+                  <Typography color="white" className="mt-2 mb-2 font-normal">
                     Your Ultimate Online Destination for Selling Vehicles
                   </Typography>
-                  <Button>
-                    <a href="/category">Buy Dream Vehicle</a>
+                  <Button color="white" className="">
+                    <a href="/category">view sale</a>
                   </Button>
                 </div>
               </figcaption>
@@ -155,17 +158,18 @@ const Home = () => {
                 src={rent2}
                 alt="background img"
               />
-              <figcaption className="absolute bottom-8 left-2/4 flex w-[calc(100%-4rem)] -translate-x-2/4 rounded-xl border border-white bg-white/75 py-4 justify-center items-center shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm">
+              <figcaption className="absolute top-8 left-2/4 flex w-1/2 -translate-x-2/4 rounded-xl  py-4 justify-center items-center shadow-lg saturate-200">
+                <Typography variant="h2" color="black">
+                  RENT VEHICLE
+                </Typography>
+              </figcaption>
+              <figcaption className="absolute bottom-8 left-2/4 flex w-1/2 -translate-x-2/4 rounded-xl border py-4 justify-center items-center shadow-lg saturate-200 backdrop-blur-sm">
                 <div>
-                  <Typography variant="h5" color="blue-gray">
-                    Ride with Ease: Your Hassle-Free Solution for Vehicle
-                    Rentals
-                  </Typography>
-                  <Typography color="gray" className="mt-2 mb-2 font-normal">
+                  <Typography color="white" className="mt-2 mb-2 font-normal">
                     Your Ultimate Online Destination for Selling Vehicles
                   </Typography>
-                  <Button>
-                    <a href="#">rent vehicle</a>
+                  <Button color="white" className="">
+                    <a href="/category">Rent vehicle</a>
                   </Button>
                 </div>
               </figcaption>
@@ -174,10 +178,12 @@ const Home = () => {
         </Swiper>
       </div>
 
-      <div className="mb-10">
+      <Search />
+
+      <div className="mb-10 mt-5">
         <figure className="relative h-96 w-full">
           <img
-            className="h-full w-full rounded-xl object-cover object-center"
+            className="h-full w-full rounded-xl object-cover shadow-xl shadow-blue-gray-900/50"
             src={carkey}
             alt="background img"
           />

@@ -49,7 +49,9 @@ const FinanceCal = () => {
   };
 
   return (
-    <div className="p-5 px-5 border rounded-xl drop-shadow-category-shadow mb-10 justify-center">
+    <div style={{
+      boxShadow: "rgba(0, 0, 0, 0.15) 0px 3px 5px"
+    }} className="p-5 px-5 border rounded-xl mb-10 justify-center">
       <Typography
         className="flex justify-center items-center font-normal"
         color="blue-gray"
@@ -64,7 +66,7 @@ const FinanceCal = () => {
         Finance Calculator
       </Typography>
       <Typography
-        className="flex justify-center items-center font-normal "
+        className="flex justify-center items-center font-normal pb-2"
         color="blue-gray"
       >
         Planning to buy your dream vehicle from us? Use our finance calculator
@@ -90,7 +92,7 @@ const FinanceCal = () => {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <Button type="submit" className="mt-2" size="sm">
+            <Button type="submit" className="mt-4 mb-1" size="sm">
               Calculate
             </Button>
           </div>

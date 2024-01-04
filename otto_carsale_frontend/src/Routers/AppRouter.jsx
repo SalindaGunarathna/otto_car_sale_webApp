@@ -24,7 +24,7 @@ const AppRouter = () => {
           <Route path="category/cabs" element={<CabsPage />} />
           <Route path="category/cabs/:id" element={<VehicleFull />} />
           <Route path="category/trucks" element={<TrucksPage />} />
-          {/* <Route path="category/trucks/:id" element={<VehicleFull />} /> */}
+          <Route path="category/trucks/:id" element={<VehicleFull />} />
           <Route path="category/motorcycles" element={<BikePage />} />
           <Route path="category/motorcycles/:id" element={<VehicleFull />} />
         </Route>

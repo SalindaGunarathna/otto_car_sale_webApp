@@ -1,8 +1,9 @@
 import { Card, IconButton, Typography } from "@material-tailwind/react";
 import React, { useRef } from "react";
 import MainContainer from "../../Layout/MainContainer";
+import { useLocation } from "react-router-dom";
 
-const VehicleFull = ({ CarName, imgVhl }) => {
+const VehicleFull = () => {
   const images = [
     "https://majesticjourney.in/wp-content/uploads/2022/05/goa-featured.jpg",
     "https://wallpaperaccess.com/full/267434.jpg",
@@ -49,16 +50,20 @@ const VehicleFull = ({ CarName, imgVhl }) => {
     },
   ];
 
+  // console.log(thi.props.location.CarNam)
+
   const mainImageRef = useRef();
   const subImageRef = useRef([]);
+  const location = useLocation()
 
+  console.log(location.state.CarName,location.state.imgUrl)
   return (
     <MainContainer>
       <div className="justify-center items-center flex">
         <div className="p-5 px-5 border rounded-xl drop-shadow-category-shadow mb-10">
           <div className="justify-center items-center flex flex-col">
             <div className="pb-5">
-              <Typography variant="h3">Susuki</Typography>
+              <Typography variant="h3">{location.state.CarName}</Typography>
             </div>
             <div className="w-3/4">
               <img

@@ -68,11 +68,21 @@ const CarSmallCard = ({ section, name, imgUrl, id }) => {
       </CardBody>
       <CardFooter className="pt-0">
         <div className="flex justify-center items-center">
-          <Link to={`/category/${section}/${id}`}>
-          <Button onClick={()=>{
-            <VehicleFull key={id} CarName={name} imgVhl={imgUrl}/>
-          }} size="md">More Details</Button>
+          
+          <Link to={`/category/${section}/${id}`}
+          state={{
+            CarName:name,
+            imgUrl:imgUrl
+          }}
+          >
+            <Button>
+
+            More Details
+            </Button>
           </Link>
+          {/* <Button onClick={()=>{
+            <VehicleFull key={id} CarName={name} imgVhl={imgUrl}/>
+          }} size="md">More Details</Button> */}
         </div>
       </CardFooter>
     </Card>

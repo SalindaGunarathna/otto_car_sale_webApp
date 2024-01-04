@@ -7,7 +7,7 @@ import CarSmallCard from "../../../../components/cards/CarSmallCard";
 
 const cabs = [
   {
-    name: "Toyota",
+    name: "Toyotaqqqq",
     imgUrl:
       "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
   },

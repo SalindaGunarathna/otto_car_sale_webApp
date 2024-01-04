@@ -16,6 +16,7 @@ import truck from "../../assets/images/caregories/truck.svg";
 import van from "../../assets/images/caregories/van.svg";
 import backim from "../../assets/images/cate.svg";
 import Product from "./Product";
+import Search from "../Search";
 
 const Categorypage = () => {
   return (
@@ -50,7 +51,9 @@ const Categorypage = () => {
         </figure>
       </div>
 
-      <div className="p-5 px-5 border rounded-xl drop-shadow-category-shadow mb-10">
+      <div style={{
+        boxShadow: "rgba(0, 0, 0, 0.15) 0px 3px 5px",
+      }} className="p-5 px-5 border rounded-xl mb-10">
         <Typography variant="h5" className="-mb-1">
           Vehicle Categories
         </Typography>
@@ -187,46 +190,9 @@ const Categorypage = () => {
         </div>
       </div>
 
-      <div className="p-5 px-5 border rounded-xl drop-shadow-category-shadow">
-        <Typography variant="h5" className="mb-2">
-          Search your vehicle
-        </Typography>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:px-36 mt-2 justify-around items-center">
-          <div className="w-full px-5 p-2">
-            <Select color="blue" label="Select Version">
-              <Option>add1</Option>
-              <Option>add2</Option>
-              <Option>add3</Option>
-            </Select>
-          </div>
-          <div className="w-full px-5 p-2">
-            <Select color="blue" label="Select Version">
-              <Option>add</Option>
-            </Select>
-          </div>
-          <div className="w-full px-5 p-2">
-            <Select color="blue" label="Select Version">
-              <Option>addL</Option>
-            </Select>
-          </div>
-          <div className="w-full px-5 p-2">
-            <Select color="blue" label="Select Version">
-              <Option>add</Option>
-            </Select>
-          </div>
-          <div className="w-full px-5 p-2">
-            <Select color="blue" label="Select Version">
-              <Option>add</Option>
-            </Select>
-          </div>
-          <div className="flex justify-center items-center">
-            <Button size="sm" color="blue">
-              Search
-            </Button>
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-center">
+      <Search/>
+
+      <div className="flex justify-center -mt-5">
         <Product title="Our Brands" />
       </div>
     </MainContainer>
