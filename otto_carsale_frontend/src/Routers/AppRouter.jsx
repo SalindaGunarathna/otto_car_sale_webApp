@@ -9,6 +9,7 @@ import CabsPage from "../pages/categories/sections/cabs/CabsPage";
 import CarPage from "../pages/categories/sections/cars/CarPage";
 import TrucksPage from "../pages/categories/sections/trucks/TrucksPage";
 import VansPage from "../pages/categories/sections/vans/VansPage";
+import ContactUs from "../pages/contactUS/ContactUs";
 
 const AppRouter = () => {
   return (
@@ -27,6 +28,7 @@ const AppRouter = () => {
           <Route path="category/trucks/:id" element={<VehicleFull />} />
           <Route path="category/motorcycles" element={<BikePage />} />
           <Route path="category/motorcycles/:id" element={<VehicleFull />} />
+          <Route path="contact-us" element={<ContactUs/>} />
         </Route>
       </Routes>
     </BrowserRouter>
