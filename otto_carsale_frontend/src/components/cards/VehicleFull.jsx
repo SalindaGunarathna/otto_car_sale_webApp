@@ -1,14 +1,15 @@
-import { Card, IconButton, Typography } from "@material-tailwind/react";
+import { Card, Typography } from "@material-tailwind/react";
 import React, { useRef } from "react";
-import MainContainer from "../../Layout/MainContainer";
 import { useLocation } from "react-router-dom";
+import MainContainer from "../../Layout/MainContainer";
+import CarSmallCard from "./CarSmallCard";
 
 const VehicleFull = () => {
   const images = [
-    "https://majesticjourney.in/wp-content/uploads/2022/05/goa-featured.jpg",
-    "https://wallpaperaccess.com/full/267434.jpg",
-    "https://www.bestoflanka.com/images/slider/best-things-to-do-in-sri-lanka/beach-destinations-sri-lanka/01.jpg",
-    "https://wallpapers.com/images/featured/2ygv7ssy2k0lxlzu.jpg",
+    "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://plus.unsplash.com/premium_photo-1682125729312-78f16e6e6f38?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FyfGVufDB8MHwwfHx8MA%3D%3D",
+    "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FyfGVufDB8MHwwfHx8MA%3D%3D",
+    "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNhcnxlbnwwfDB8MHx8fDA%3D",
   ];
 
   const TABLE_ROWS = [
@@ -40,21 +41,23 @@ const VehicleFull = () => {
       name: "Alexa Liras",
       job: "Developer",
     },
+  ];
+
+  const cabs = [
     {
-      name: "Alexa Liras",
-      job: "Developer",
+      name: "Toyotaqqqq",
+      imgUrl:
+        "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
     },
     {
-      name: "Alexa Liras",
-      job: "Developer",
+      name: "Harrier",
+      imgUrl:
+        "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
     },
     {
-      name: "Alexa Liras",
-      job: "Developer",
-    },
-    {
-      name: "Alexa Liras",
-      job: "Developer",
+      name: "Subaru",
+      imgUrl:
+        "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
     },
   ];
 
@@ -62,9 +65,9 @@ const VehicleFull = () => {
 
   const mainImageRef = useRef();
   const subImageRef = useRef([]);
-  const location = useLocation()
+  const location = useLocation();
 
-  console.log(location.state.CarName,location.state.imgUrl)
+  console.log(location.state.CarName, location.state.imgUrl);
   return (
     <MainContainer>
       <div className="justify-center items-center flex">
@@ -77,39 +80,50 @@ const VehicleFull = () => {
               <img
                 src={images[0]}
                 alt="item"
-                className="w-full h-[400px] rounded-md object-cover"
+                className="w-auto lg:h-96 h- rounded-md object-cover"
                 ref={mainImageRef}
               />
-              <div className=" w-full mt-3 grid grid-cols-4 text-center grid-rows-1 gap-3">
-                {images.map((e, i) => (
-                  <IconButton
-                    key={i}
-                    sx={{ padding: "0", borderRadius: "2px" }}
-                    onClick={() => {
-                      subImageRef.current[i].style.border = "2px solid #c82196";
-                      mainImageRef.current.src = subImageRef.current[i].src;
-                      for (let x = 0; x < subImageRef.current.length; x++) {
-                        if (x !== i) {
-                          subImageRef.current[x].style.border = "none";
+              <div className="flex justify-items content-around">
+                <div className="mt-3 grid grid-cols-4 grid-rows-1 lg:gap-x-10 sm:gap-x-3 xs:gap-x-2 gap-x-2 ">
+                  {images.map((e, i) => (
+                    <button
+                      key={i}
+                      sx={{
+                        padding: "0",
+                        borderRadius: "2px",
+                        margin: "0 2px",
+                        width: "20px",
+                        height: "20px",
+                      }}
+                      onClick={() => {
+                        subImageRef.current[i].style.border =
+                          "2px solid #c82196";
+                        mainImageRef.current.src = subImageRef.current[i].src;
+                        for (let x = 0; x < subImageRef.current.length; x++) {
+                          if (x !== i) {
+                            subImageRef.current[x].style.border = "none";
+                          }
                         }
-                      }
-                    }}
-                  >
-                    <img
-                      src={e}
-                      alt="item"
-                      className="w-full"
-                      ref={(el) => (subImageRef.current[i] = el)}
-                      name={`item image ref : ${i}`}
-                    />
-                  </IconButton>
-                ))}
+                      }}
+                    >
+                      <img
+                        src={e}
+                        alt="item"
+                        className="rounded-md object-cover w-20 h-14 "
+                        ref={(el) => (subImageRef.current[i] = el)}
+                        name={`item image ref : ${i}`}
+                      />
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
-            <div className="p-10">
+            <div className="pt-10 pb-1">
               <Typography variant="lead">hello</Typography>
             </div>
           </div>
+
+          {/* details of the vehicle */}
           <div className="py-5 pt-2 flex justify-center">
             <Card className="h-full w-3/4">
               <table className="w-full min-w-max table-auto text-left">
@@ -142,6 +156,26 @@ const VehicleFull = () => {
           </div>
         </div>
       </div>
+
+
+      {/* suggetions */}
+      {/* <div className="p-5 px-5 border rounded-xl drop-shadow-category-shadow mb-10">
+      <Typography variant="h4"> You may also like</Typography>
+      <div className="">
+      <div className="grid p-5 gap-10 justify-between custom-grid-cols-4 grid-rows-auto">
+          {cabs.map(({ name, imgUrl }, index) => (
+            <CarSmallCard
+              key={index}
+              name={name}
+              imgUrl={imgUrl}
+              id={index}
+              section="cabs"
+            />
+          ))}
+        </div>
+      </div>
+      </div> */}
+
     </MainContainer>
   );
 };

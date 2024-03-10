@@ -1,20 +1,18 @@
 import {
-    OrbitControls,
-    Preload,
-    PresentationControls,
-    Stage,
-    useGLTF,
+  OrbitControls,
+  Preload,
+  PresentationControls,
+  Stage,
+  useGLTF,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import CanvasLoader from "./Loader";
 
-function Model() {
+function Model(props) {
   const { scene } = useGLTF("bmw.glb");
 
-  return (
-    <primitive object={scene} scale={0.01} />
-  );
+  return <primitive object={scene} {...props} />;
 }
 
 const Car3D = () => {
@@ -36,7 +34,7 @@ const Car3D = () => {
         <OrbitControls autoRotate enableZoom={false} />
         <PresentationControls speed={1.5} global polar={[-0.1, Math.PI / 4]}>
           <Stage environment={null}>
-            <Model scale={2.5} />
+            <Model scale={0.01} />
             <Preload all />
           </Stage>
         </PresentationControls>

@@ -1,5 +1,5 @@
 import { Typography } from "@material-tailwind/react";
-import logo from "../../assets/images/logo2.svg"
+import logo from "../../assets/images/oriLogo.svg"
  
 const LINKS = [
   {

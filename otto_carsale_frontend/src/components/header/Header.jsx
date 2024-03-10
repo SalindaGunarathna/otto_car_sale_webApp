@@ -198,7 +198,10 @@ export function Header() {
           <Button variant="text" size="sm" color="blue-gray">
             Log In
           </Button>
-          <Button variant="gradient" size="sm">
+          <Button
+            onClick={() => {
+              window.location.href = "/signup";
+            }} variant="gradient" size="sm">
             Sign In
           </Button>
         </div>
