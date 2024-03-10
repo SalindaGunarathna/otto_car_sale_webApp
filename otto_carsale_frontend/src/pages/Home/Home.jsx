@@ -11,6 +11,9 @@ import MainContainer from "../../Layout/MainContainer";
 import carkey from "../../assets/images/car_key.svg";
 // import rent from "../../assets/images/rent.svg";
 // import sale from "../../assets/images/sale.svg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import rent2 from "../../assets/images/home/rent.svg";
+import sale2 from "../../assets/images/home/sale.svg";
 import FinanceCal from "./FinanceCal";
 
 // Import Swiper styles
@@ -21,13 +24,14 @@ import "swiper/css/pagination";
 import "./styles.css";
 
 // import required modules
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import Car3D from "../../components/Car3D";
 import Search from "../Search";
-import { motion } from "framer-motion";
 
 const Home = () => {
   return (
     <MainContainer>
+      {/* old one */}
       {/* <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-[auto] gap-5 pl-20 pr-20 pb-10 sm:px-0">
         <div className=" justify-center flex">
           <Card className="w-96">
@@ -108,8 +112,11 @@ const Home = () => {
           </Card>
         </div>
       </div> */}
-
-      {/* <div className="mb-10">
+      <div className="custom-div">
+      <Car3D />
+      </div>
+      {/* new one */}
+      <div className="mb-10">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -124,7 +131,7 @@ const Home = () => {
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide >
+          <SwiperSlide>
             <figure className="relative h-96 w-full">
               <img
                 className="h-full w-full rounded-lg object-cover object-center"
@@ -167,20 +174,14 @@ const Home = () => {
                     Your Ultimate Online Destination for Selling Vehicles
                   </Typography>
                   <Button color="white" className="">
-                    <a href="#">Rent vehicle</a>
+                    <a href="/category">Rent vehicle</a>
                   </Button>
                 </div>
               </figcaption>
             </figure>
           </SwiperSlide>
         </Swiper>
-      </div> */}
-
-<motion.div
-        className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
-      >
-      <Car3D />
-      </motion.div>
+      </div>
 
       <Search />
 

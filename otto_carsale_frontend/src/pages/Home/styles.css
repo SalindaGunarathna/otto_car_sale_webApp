@@ -15,6 +15,11 @@
     margin: 0;
     padding: 0;
   }
+
+  .custom-div {
+    height: 100%; /* 50% of the parent element's height */
+    background-color: lightblue;
+  }  
   
   .swiper {
     width: 100%;
