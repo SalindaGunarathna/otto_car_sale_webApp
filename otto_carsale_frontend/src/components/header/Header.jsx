@@ -26,7 +26,7 @@ import {
   TagIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
-import logo from "../../assets/images/logo2.svg";
+import logo from "../../assets/images/oriLogo.svg";
 
 const navListMenuItems = [
   {

@@ -11,21 +11,19 @@ import MainContainer from "../../Layout/MainContainer";
 import carkey from "../../assets/images/car_key.svg";
 // import rent from "../../assets/images/rent.svg";
 // import sale from "../../assets/images/sale.svg";
-import rent2 from "../../assets/images/home/rent.svg";
-import sale2 from "../../assets/images/home/sale.svg";
 import FinanceCal from "./FinanceCal";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import "./styles.css";
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Car3D from "../../components/Car3D";
 import Search from "../Search";
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
@@ -111,7 +109,7 @@ const Home = () => {
         </div>
       </div> */}
 
-      <div className="mb-10">
+      {/* <div className="mb-10">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -169,14 +167,20 @@ const Home = () => {
                     Your Ultimate Online Destination for Selling Vehicles
                   </Typography>
                   <Button color="white" className="">
-                    <a href="/category">Rent vehicle</a>
+                    <a href="#">Rent vehicle</a>
                   </Button>
                 </div>
               </figcaption>
             </figure>
           </SwiperSlide>
         </Swiper>
-      </div>
+      </div> */}
+
+<motion.div
+        className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
+      >
+      <Car3D />
+      </motion.div>
 
       <Search />
 
