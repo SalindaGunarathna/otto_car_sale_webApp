@@ -4,41 +4,60 @@ import MainContainer from '../../../../Layout/MainContainer'
 import { Typography } from '@material-tailwind/react'
 import truckbg from '../../../../assets/images/PageHeaders/truck.svg'
 import CarSmallCard from '../../../../components/cards/CarSmallCard'
+import axios from 'axios'
 
-const trucks = [
-  {
-    name: "Toyota",
-    imgUrl:
-      "https://as2.ftcdn.net/v2/jpg/01/01/90/25/1000_F_101902599_2a3XCqOUB2M6IHXwciyTUFpBBpJnCM25.jpg"
-  },
-  {
-    name: "Toyota",
-    imgUrl:
-      "https://as2.ftcdn.net/v2/jpg/01/01/90/25/1000_F_101902599_2a3XCqOUB2M6IHXwciyTUFpBBpJnCM25.jpg"
-  },
-  {
-    name: "Toyota",
-    imgUrl:
-      "https://as2.ftcdn.net/v2/jpg/01/01/90/25/1000_F_101902599_2a3XCqOUB2M6IHXwciyTUFpBBpJnCM25.jpg"
-  },
-  {
-    name: "Toyota",
-    imgUrl:
-      "https://as2.ftcdn.net/v2/jpg/01/01/90/25/1000_F_101902599_2a3XCqOUB2M6IHXwciyTUFpBBpJnCM25.jpg"
-  },
-  {
-    name: "Toyota",
-    imgUrl:
-      "https://as2.ftcdn.net/v2/jpg/01/01/90/25/1000_F_101902599_2a3XCqOUB2M6IHXwciyTUFpBBpJnCM25.jpg"
-  },
-  {
-    name: "Toyotttttta",
-    imgUrl:
-      "https://as2.ftcdn.net/v2/jpg/01/01/90/25/1000_F_101902599_2a3XCqOUB2M6IHXwciyTUFpBBpJnCM25.jpg"
-  }
-]
+// const trucks = [
+//   {
+//     name: "Toyota",
+//     imgUrl:
+//       "https://as2.ftcdn.net/v2/jpg/01/01/90/25/1000_F_101902599_2a3XCqOUB2M6IHXwciyTUFpBBpJnCM25.jpg"
+//   },
+//   {
+//     name: "Toyota",
+//     imgUrl:
+//       "https://as2.ftcdn.net/v2/jpg/01/01/90/25/1000_F_101902599_2a3XCqOUB2M6IHXwciyTUFpBBpJnCM25.jpg"
+//   },
+//   {
+//     name: "Toyota",
+//     imgUrl:
+//       "https://as2.ftcdn.net/v2/jpg/01/01/90/25/1000_F_101902599_2a3XCqOUB2M6IHXwciyTUFpBBpJnCM25.jpg"
+//   },
+//   {
+//     name: "Toyota",
+//     imgUrl:
+//       "https://as2.ftcdn.net/v2/jpg/01/01/90/25/1000_F_101902599_2a3XCqOUB2M6IHXwciyTUFpBBpJnCM25.jpg"
+//   },
+//   {
+//     name: "Toyota",
+//     imgUrl:
+//       "https://as2.ftcdn.net/v2/jpg/01/01/90/25/1000_F_101902599_2a3XCqOUB2M6IHXwciyTUFpBBpJnCM25.jpg"
+//   },
+//   {
+//     name: "Toyotttttta",
+//     imgUrl:
+//       "https://as2.ftcdn.net/v2/jpg/01/01/90/25/1000_F_101902599_2a3XCqOUB2M6IHXwciyTUFpBBpJnCM25.jpg"
+//   }
+// ]
 
 const TrucksPage = () => {
+
+  const [trucks , setTruck] = React.useState([]);
+
+  React.useEffect(() => {
+    async function fetchData() {
+      await axios.get('http://localhost:3001/api/v1/vehicle/retrieveAllVehicles')
+          .then(function (response) {
+              console.log(response.truck);
+              setTruck(response.truck);
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+  }
+  fetchData();
+
+}, []);
+
   return (
     <MainContainer>
         <div className="mb-10">

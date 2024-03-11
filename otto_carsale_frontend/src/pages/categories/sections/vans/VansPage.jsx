@@ -4,36 +4,55 @@ import MainContainer from "../../../../Layout/MainContainer";
 import { Typography } from "@material-tailwind/react";
 import vanbg from "../../../../assets/images/PageHeaders/van.svg";
 import CarSmallCard from "../../../../components/cards/CarSmallCard";
+import axios from "axios";
 
-const vans = [
-  {
-    name: "Toyota",
-    imgUrl:
-      "https://img.freepik.com/premium-photo/camper-van-is-parked-beach-with-sunset-background_337384-20685.jpg"
-  },
-  {
-    name: "Toyota",
-    imgUrl:
-      "https://img.freepik.com/premium-photo/camper-van-is-parked-beach-with-sunset-background_337384-20685.jpg"
-  },
-  {
-    name: "Toyota",
-    imgUrl:
-      "https://img.freepik.com/premium-photo/camper-van-is-parked-beach-with-sunset-background_337384-20685.jpg"
-  },
-  {
-    name: "Toyota",
-    imgUrl:
-      "https://img.freepik.com/premium-photo/camper-van-is-parked-beach-with-sunset-background_337384-20685.jpg"
-  },
-  {
-    name: "Toyota",
-    imgUrl:
-      "https://img.freepik.com/premium-photo/camper-van-is-parked-beach-with-sunset-background_337384-20685.jpg"
-  }
-]
+// const vans = [
+//   {
+//     name: "Toyota",
+//     imgUrl:
+//       "https://img.freepik.com/premium-photo/camper-van-is-parked-beach-with-sunset-background_337384-20685.jpg"
+//   },
+//   {
+//     name: "Toyota",
+//     imgUrl:
+//       "https://img.freepik.com/premium-photo/camper-van-is-parked-beach-with-sunset-background_337384-20685.jpg"
+//   },
+//   {
+//     name: "Toyota",
+//     imgUrl:
+//       "https://img.freepik.com/premium-photo/camper-van-is-parked-beach-with-sunset-background_337384-20685.jpg"
+//   },
+//   {
+//     name: "Toyota",
+//     imgUrl:
+//       "https://img.freepik.com/premium-photo/camper-van-is-parked-beach-with-sunset-background_337384-20685.jpg"
+//   },
+//   {
+//     name: "Toyota",
+//     imgUrl:
+//       "https://img.freepik.com/premium-photo/camper-van-is-parked-beach-with-sunset-background_337384-20685.jpg"
+//   }
+// ]
 
 const VansPage = () => {
+
+  const [vans , setVans] = React.useState([]);
+
+  React.useEffect(() => {
+    async function fetchData() {
+      await axios.get('http://localhost:3001/api/v1/vehicle/retrieveAllVehicles')
+          .then(function (response) {
+              console.log(response.van);
+              setVans(response.van);
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+  }
+  fetchData();
+
+}, []);
+
   return (
     <MainContainer>
       <div className="mb-10">

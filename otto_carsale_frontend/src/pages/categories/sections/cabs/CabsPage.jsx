@@ -4,41 +4,60 @@ import MainContainer from "../../../../Layout/MainContainer";
 import { Typography } from "@material-tailwind/react";
 import cabbg from "../../../../assets/images/PageHeaders/cab.svg";
 import CarSmallCard from "../../../../components/cards/CarSmallCard";
+import axios from "axios";
 
-const cabs = [
-  {
-    name: "Toyotaqqqq",
-    imgUrl:
-      "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
-  },
-  {
-    name: "Harrier",
-    imgUrl:
-      "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
-  },
-  {
-    name: "Subaru",
-    imgUrl:
-      "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
-  },
-  {
-    name: "suzuki",
-    imgUrl:
-      "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
-  },
-  {
-    name: "jeep",
-    imgUrl:
-      "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
-  },
-  {
-    name: "Wish",
-    imgUrl:
-      "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
-  },
-];
+// const cabs = [
+//   {
+//     name: "Toyotaqqqq",
+//     imgUrl:
+//       "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
+//   },
+//   {
+//     name: "Harrier",
+//     imgUrl:
+//       "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
+//   },
+//   {
+//     name: "Subaru",
+//     imgUrl:
+//       "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
+//   },
+//   {
+//     name: "suzuki",
+//     imgUrl:
+//       "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
+//   },
+//   {
+//     name: "jeep",
+//     imgUrl:
+//       "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
+//   },
+//   {
+//     name: "Wish",
+//     imgUrl:
+//       "https://img.freepik.com/free-photo/close-up-shot-taxi-sign-warm-colours-sunset-with-bokeh-lights-background_181624-54985.jpg",
+//   },
+// ];
 
 const CabsPage = () => {
+
+  const [cabs , setCasbs] = React.useState([]);
+
+  React.useEffect(() => {
+    async function fetchData() {
+      await axios.get('http://localhost:3001/api/v1/vehicle/retrieveAllVehicles')
+          .then(function (response) {
+              console.log(response.cab);
+              setCasbs(response.cab);
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+  }
+  fetchData();
+
+}, []);
+
   return (
     <MainContainer>
       <div className="mb-10">

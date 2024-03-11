@@ -12,8 +12,10 @@ import carkey from "../../assets/images/car_key.svg";
 // import rent from "../../assets/images/rent.svg";
 // import sale from "../../assets/images/sale.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
-import rent2 from "../../assets/images/home/rent.svg";
-import sale2 from "../../assets/images/home/sale.svg";
+// import rent2 from "../../assets/images/home/rent.svg";
+import rent3 from "../../assets/images/home/drive.jpg";
+// import sale2 from "../../assets/images/home/sale.svg";
+import sale3 from "../../assets/images/home/tesla.jpg";
 import FinanceCal from "./FinanceCal";
 
 // Import Swiper styles
@@ -135,7 +137,7 @@ const Home = () => {
             <figure className="relative h-96 w-full">
               <img
                 className="h-full w-full rounded-lg object-cover object-center"
-                src={sale2}
+                src={sale3}
                 alt="background img"
               />
               <figcaption className="absolute top-8 left-2/4 flex w-1/2 -translate-x-2/4 rounded-xl  py-4 justify-center items-center shadow-lg saturate-200">
@@ -160,7 +162,7 @@ const Home = () => {
             <figure className="relative h-96 w-full">
               <img
                 className="h-full w-full rounded-xl object-cover object-center"
-                src={rent2}
+                src={rent3}
                 alt="background img"
               />
               <figcaption className="absolute top-8 left-2/4 flex w-1/2 -translate-x-2/4 rounded-xl  py-4 justify-center items-center shadow-lg saturate-200">

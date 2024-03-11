@@ -4,31 +4,50 @@ import MainContainer from "../../../../Layout/MainContainer";
 import { Typography } from "@material-tailwind/react";
 import carbg from "../../../../assets/images/PageHeaders/car.svg";
 import CarSmallCard from "../../../../components/cards/CarSmallCard";
+import axios from "axios";
 
-const cars = [
-  {
-    name: "Toyota",
-    imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
-  },
-  {
-    name: "Nissan",
-    imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
-  },
-  {
-    name: "Corolla",
-    imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
-  },
-  {
-    name: "Ford",
-    imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
-  },
-  {
-    name: "Tacoma",
-    imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
-  },
-];
+// const cars = [
+//   {
+//     name: "Toyota",
+//     imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
+//   },
+//   {
+//     name: "Nissan",
+//     imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
+//   },
+//   {
+//     name: "Corolla",
+//     imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
+//   },
+//   {
+//     name: "Ford",
+//     imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
+//   },
+//   {
+//     name: "Tacoma",
+//     imgUrl: "https://wallpaperaccess.com/full/267434.jpg",
+//   },
+// ];
 
 const CarPage = () => {
+
+  const [cars , setCars] = React.useState([]);
+
+  React.useEffect(() => {
+    async function fetchData() {
+      await axios.get('http://localhost:3001/api/v1/vehicle/retrieveAllVehicles')
+          .then(function (response) {
+              console.log(response.car);
+              setCars(response.car);
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+  }
+  fetchData();
+
+}, []);
+
   return (
     <MainContainer>
       <div className="mb-10">

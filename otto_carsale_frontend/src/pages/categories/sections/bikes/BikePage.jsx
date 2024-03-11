@@ -4,40 +4,60 @@ import MainContainer from '../../../../Layout/MainContainer'
 import { Typography } from '@material-tailwind/react'
 import bikebg from "../../../../assets/images/PageHeaders/bike.svg"
 import CarSmallCard from '../../../../components/cards/CarSmallCard'
+import axios from 'axios'
 
-const bikes = [
-  {
-    name: "Yamaha",
-    imgUrl:
-      "https://freerangestock.com/sample/38723/biking-into-the-sunset.jpg"
-  },
-  {
-    name: "Ducati",
-    imgUrl:
-      "https://freerangestock.com/sample/38723/biking-into-the-sunset.jpg"
-  },
-  {
-    name: "Honda",
-    imgUrl:
-      "https://freerangestock.com/sample/38723/biking-into-the-sunset.jpg"
-  },
-  {
-    name: "Suzuki",
-    imgUrl:
-      "https://freerangestock.com/sample/38723/biking-into-the-sunset.jpg"
-  },
-  {
-    name: "Mitshubishi",
-    imgUrl:
-      "https://freerangestock.com/sample/38723/biking-into-the-sunset.jpg"
-  },
-  {
-    name: "Mercedes Benz",
-    imgUrl:
-      "https://freerangestock.com/sample/38723/biking-into-the-sunset.jpg"
-  }
-]
+// const bikes = [
+//   {
+//     name: "Yamaha",
+//     imgUrl:
+//       "https://freerangestock.com/sample/38723/biking-into-the-sunset.jpg"
+//   },
+//   {
+//     name: "Ducati",
+//     imgUrl:
+//       "https://freerangestock.com/sample/38723/biking-into-the-sunset.jpg"
+//   },
+//   {
+//     name: "Honda",
+//     imgUrl:
+//       "https://freerangestock.com/sample/38723/biking-into-the-sunset.jpg"
+//   },
+//   {
+//     name: "Suzuki",
+//     imgUrl:
+//       "https://freerangestock.com/sample/38723/biking-into-the-sunset.jpg"
+//   },
+//   {
+//     name: "Mitshubishi",
+//     imgUrl:
+//       "https://freerangestock.com/sample/38723/biking-into-the-sunset.jpg"
+//   },
+//   {
+//     name: "Mercedes Benz",
+//     imgUrl:
+//       "https://freerangestock.com/sample/38723/biking-into-the-sunset.jpg"
+//   }
+// ]
+
 const BikePage = () => {
+
+  const [bikes , setBikes] = React.useState([]);
+
+  React.useEffect(() => {
+    async function fetchData() {
+      await axios.get('http://localhost:3001/api/v1/vehicle/retrieveAllVehicles')
+          .then(function (response) {
+              console.log(response.bike);
+              setBikes(response.bike);
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+  }
+  fetchData();
+
+}, []);
+
   return (
     <MainContainer>
         <div className="mb-10">
