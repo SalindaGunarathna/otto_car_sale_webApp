@@ -247,8 +247,8 @@ exports.findOneVehicle = async (req, res, next) => {
 // retrieve vehicles by filtering by serching
 exports.retrieveVehicle = async (req, res, next) => {
 
-  const { vehicleType, brand, model, style, fuelType, manufacturedYear } =
-    req.body;
+    const { vehicleType, brand, model, style, fuelType, manufacturedYear } =
+      req.body;
 
   const token = req.params.token;
   console.log(req.body);
