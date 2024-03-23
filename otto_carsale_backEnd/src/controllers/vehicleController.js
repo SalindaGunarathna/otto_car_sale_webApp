@@ -156,11 +156,11 @@ exports.updateVehicle = async (req, res, next) => {
         album = oldVehicle.album;
 
         if (NewAlbum) {
-          console.log(NewAlbum[0].photoURL, NewAlbum[0].photID);
+          console.log(NewAlbum[0].photoURL);
 
           album.push({
             photoURL: NewAlbum[0].photoURL,
-            photID: NewAlbum[0].photID,
+            ///photID: NewAlbum[0].photID,
           });
 
 
@@ -238,7 +238,7 @@ exports.findOneVehicle = async (req, res, next) => {
   try {
     const selectedVehicle = await Vehicle.find({ vehicleId: vehicle_ID });
 
-    res.send(selectedVehicle);
+    res.send(selectedVehicle);  
   } catch (error) {
     next(error);
   }
@@ -355,11 +355,11 @@ exports.uploadImage = async (req, res, next) => {
 
 
         if (NewAlbum) {
-          console.log(NewAlbum[0].photoURL, NewAlbum[0].photID);
+          console.log(NewAlbum[0].photoURL);
 
           vehicle.album.push({
             photoURL:NewAlbum[0].photoURL,
-            photID: NewAlbum[0].photID,
+            //  photID: NewAlbum[0].photID,
           });
 
 

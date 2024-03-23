@@ -51,7 +51,7 @@ const VehicleSchema = new Schema({
     album: [{
 
         photoURL: { type: String },
-        photID: { type: String }
+       //  photID: { type: String }
 
     }],
 });
